@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+
+  wordpress:
+    build: .
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_PASSWORD: example
+      WORDPRESS_DB_HOST: mysql
+      WORDPRESS_DB_NAME: wordpress
+    depends_on:
+      - "mysql"
+
+  mysql:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: example
