@@ -3,7 +3,7 @@
 set -e
 set -o pipefail
 
-MYSQL_OPTS="--connect-timeout=10 -w -u root --password=${WORDPRESS_DB_PASSWORD} -h ${WORDPRESS_DB_HOST}"
+MYSQL_OPTS="--connect-timeout=10 -w -u ${WORDPRESS_DB_USER} --password=${WORDPRESS_DB_PASSWORD} -h ${WORDPRESS_DB_HOST}"
 TABLE_COUNT_QUERY="SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = '${WORDPRESS_DB_NAME}'"
 
 
