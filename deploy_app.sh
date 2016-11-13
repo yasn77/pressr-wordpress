@@ -3,7 +3,7 @@
 set -e
 set -o pipefail
 
-REQUIRED_ENV='TF_VAR_db_password TF_VAR_sshpubkey_file'
+REQUIRED_ENV='AWS_SECRET_ACCESS_KEY AWS_ACCESS_KEY_ID TF_VAR_db_password TF_VAR_sshpubkey_file'
 VALID_DEPLOYMENT_ENVS="development production"
 ORCHESTRATION_REPO="https://github.com/yasn77/pressr-orchestration.git"
 TMP_CLONE_DIR=$(mktemp -d)
